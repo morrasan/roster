@@ -3,15 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\ActivitiesFromLocationRequest;
 use App\Http\Requests\Api\ActivitiesRequest;
 use App\Http\Requests\Api\UploadFileRequest;
 use App\Repositories\ActivityRepository;
 use App\Services\DateRangeService;
 use App\Services\HtmlParserActivityService;
-use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 class ActivityController extends Controller
