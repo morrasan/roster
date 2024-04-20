@@ -26,7 +26,7 @@ class ActivityRepository {
      * @return Collection
      */
     public function getActivities (string $dateStart, string $dateEnd): Collection {
-        return DB::table(app(Activity::class)->getTable())
+        return Activity::query()
             ->where('date', '>=', $dateStart)
             ->where('date', '<=', $dateEnd)
             ->get();
@@ -39,7 +39,7 @@ class ActivityRepository {
      * @return Collection
      */
     public function getFlights (string $dateStart, string $dateEnd): Collection {
-        return DB::table(app(Activity::class)->getTable())
+        return Activity::query()
             ->where('date', '>=', $dateStart)
             ->where('date', '<=', $dateEnd)
             ->whereRaw('activity GLOB "[A-Z][A-Z][0-9]*"')
@@ -53,7 +53,7 @@ class ActivityRepository {
      * @return Collection
      */
     public function getStandby (string $dateStart, string $dateEnd): Collection {
-        return DB::table(app(Activity::class)->getTable())
+        return Activity::query()
             ->where('date', '>=', $dateStart)
             ->where('date', '<=', $dateEnd)
             ->where('activity', '=', 'OFF')
@@ -66,7 +66,7 @@ class ActivityRepository {
      * @return Collection
      */
     public function getFlightsFromLocation (string $location): Collection {
-        return DB::table(app(Activity::class)->getTable())
+        return Activity::query()
             ->where('from', '=', $location)
             ->get();
     }
