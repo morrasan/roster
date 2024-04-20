@@ -11,6 +11,7 @@ The business logic which parsing the relevant data from the raw roster.
 2. docker compose up 
 3. open terminal on the `roster-app` container and run commands:
    - composer install
+   - php artisan migrate
    - php artisan optimize 
 
 ## Environment
